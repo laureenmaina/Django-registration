@@ -4,7 +4,8 @@ from .models import Member
 # Create your views here.
 def register(request):
     if request.method=='POST':
-        member=Member(firstname=request.POST['firstname'],lastname=request.POST['lastname'],username=request.POST['username'],password=request.POST['password'])
+        member=Member(firstname=request.POST['firstname'],lastname=request.POST['lastname'],
+                      username=request.POST['username'],password=request.POST['password'])
         member.save()
         return redirect('/')
     else:
